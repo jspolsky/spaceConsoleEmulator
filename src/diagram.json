@@ -120,69 +120,13 @@
       "type": "wokwi-neopixel-canvas",
       "id": "c0",
       "top": 517,
-      "left": 1246,
-      "rotate": 270,
-      "attrs": { "rows": "1", "cols": "75", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c1",
-      "top": 668,
-      "left": 1037.6,
-      "rotate": 90,
-      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c2",
-      "top": 1161.6,
-      "left": 724.7,
-      "rotate": 180,
-      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c3",
-      "top": 668,
-      "left": 39.2,
-      "rotate": 90,
-      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c4",
-      "top": 1161.6,
-      "left": -273.7,
-      "rotate": 180,
-      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c5",
-      "top": 671.89,
-      "left": -943.62,
-      "rotate": 90,
-      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "c6",
-      "top": 1163.68,
-      "left": -1258.33,
-      "rotate": 180,
-      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
-    },
-    {
-      "type": "wokwi-neopixel-canvas",
-      "id": "d0",
-      "top": 517,
       "left": 1346,
       "rotate": 270,
       "attrs": { "rows": "1", "cols": "75", "pixelate": "0" }
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d1",
+      "id": "c1",
       "top": 172.8,
       "left": 734.3,
       "rotate": 180,
@@ -190,7 +134,7 @@
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d2",
+      "id": "c2",
       "top": 668,
       "left": 260,
       "rotate": 90,
@@ -198,7 +142,7 @@
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d3",
+      "id": "c3",
       "top": 172.8,
       "left": -283.3,
       "rotate": 180,
@@ -206,7 +150,7 @@
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d4",
+      "id": "c4",
       "top": 677.6,
       "left": -757.6,
       "rotate": 90,
@@ -214,7 +158,7 @@
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d5",
+      "id": "c5",
       "top": 176.69,
       "left": -1273.64,
       "rotate": 180,
@@ -222,11 +166,67 @@
     },
     {
       "type": "wokwi-neopixel-canvas",
-      "id": "d6",
+      "id": "c6",
       "top": 670.08,
       "left": -1742.23,
       "rotate": 90,
       "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d0",
+      "top": 517,
+      "left": 1246,
+      "rotate": 270,
+      "attrs": { "rows": "1", "cols": "75", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d1",
+      "top": 668,
+      "left": 1037.6,
+      "rotate": 90,
+      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d2",
+      "top": 1161.6,
+      "left": 724.7,
+      "rotate": 180,
+      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d3",
+      "top": 668,
+      "left": 39.2,
+      "rotate": 90,
+      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d4",
+      "top": 1161.6,
+      "left": -273.7,
+      "rotate": 180,
+      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d5",
+      "top": 671.89,
+      "left": -943.62,
+      "rotate": 90,
+      "attrs": { "rows": "1", "cols": "41", "pixelate": "0" }
+    },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "d6",
+      "top": 1163.68,
+      "left": -1258.33,
+      "rotate": 180,
+      "attrs": { "rows": "1", "cols": "34", "pixelate": "0" }
     },
     {
       "type": "wokwi-neopixel-meter",

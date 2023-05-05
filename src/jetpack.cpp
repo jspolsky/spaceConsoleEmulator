@@ -70,10 +70,28 @@ namespace Jetpack {
     static Roof::ring_t currentRing = 0;
     static size_t numberOfColors = sizeof(palmSpringsPalette) / sizeof(palmSpringsPalette[0]);
 
-    EVERY_N_MILLIS(25) {
+    EVERY_N_MILLIS(500) {
       currentColor = (currentColor + 1) % numberOfColors;
       currentRing = (currentRing + 1) % 6;
       Roof::SetRingColor(currentRing, palmSpringsPalette[currentColor]);
+    }
+
+  }
+
+  void edgeTest() {
+
+    static Roof::edge_t edgeNumber = 0;
+    
+    EVERY_N_MILLIS(100) {
+
+      if (edgeNumber == 0)
+      {
+        Roof::SetGlobalColor(CRGB::Black);
+      }
+
+      Roof::SetEdgeColor(edgeNumber, CRGB::Red);
+      edgeNumber = (edgeNumber + 1) % 24;
+
     }
 
   }
@@ -82,7 +100,8 @@ namespace Jetpack {
 
 
     // slowRainbow();
-    palmSpringsModern();
+    // palmSpringsModern();
+    edgeTest();
 
   }
 
