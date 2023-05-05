@@ -18,11 +18,19 @@ emulator!
 
 # How are the lights arranged?
 
-(illustration will go here)
+The lights are arranged as six rectangles in the ceiling
+above the main interactive space in camp.
+
+Here's a diagram of the layout of the public area
+of the Future Turtles. In the main lounge there are
+six rectangles show here in red and blue which represent
+the locations of the camp ceiling lights.
+
+![arrangment](diagram.png)
 
 In order to make it easy for the pattern programmer to design light shows without worrying about the hardware
 layout of the LEDs, there are a bunch of functions in roof.h/.cpp which provide a simplified abstraction of the
-pixel layout.
+pixel layout. For example, there is a simple function called SetRingColor which you can use to set the color of any single rectangle to the same color. There are other functions that give you more control, and you don't have to think about how the lights are arranged or connected.
 
 # How can I write my own patterns?
 
