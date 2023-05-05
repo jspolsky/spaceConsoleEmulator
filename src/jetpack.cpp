@@ -3,11 +3,13 @@
 //
 // Want to write your own color patterns? Start by using jetpack.h/.cpp as
 // the template. Change the namespace and file names. Include them in 
-// sketch.ino.
+// spaceConsole.cpp.
 //
 // you can use any features of FastLED.
 // To access the LED array, use the functions
-// made available in roof.h.
+// made available in roof.h. Don't access the leds[] array directly,
+// as roof.h/roof.cpp provide abstractions over the physical
+// hardware which are different in the simulator.
 //
 
 #define FASTLED_INTERNAL
@@ -68,7 +70,7 @@ namespace Jetpack {
     static Roof::ring_t currentRing = 0;
     static size_t numberOfColors = sizeof(palmSpringsPalette) / sizeof(palmSpringsPalette[0]);
 
-    EVERY_N_MILLIS(2500) {
+    EVERY_N_MILLIS(25) {
       currentColor = (currentColor + 1) % numberOfColors;
       currentRing = (currentRing + 1) % 6;
       Roof::SetRingColor(currentRing, palmSpringsPalette[currentColor]);

@@ -1,7 +1,6 @@
 #define FASTLED_INTERNAL
 #include <FastLED.h>
 #include "roof.h"
-#include "jetpack.h"
 
 namespace Roof
 {
@@ -50,9 +49,6 @@ namespace Roof
 
   void loop()
   {
-
-    Jetpack::loop();    
-
     FastLED.delay(1);
   }
 }
