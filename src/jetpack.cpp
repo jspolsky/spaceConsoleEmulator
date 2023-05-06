@@ -97,11 +97,28 @@ namespace Jetpack {
 
   }
 
+  void ringPixelTest() {
+
+    static uint32_t pixel = 0;
+    static uint8_t hue = 0;
+
+    EVERY_N_MILLIS(1) {
+      
+      for (Roof::ring_t ring = 0; ring < 6; ring++)
+        Roof::SetRingPixel(ring, pixel, CHSV(hue, 255, 255));
+
+      pixel = (pixel + 1) % 150;
+      hue++;
+    }
+
+  }
+
   void loop() {
 
     // slowRainbow();
     // palmSpringsModern();
-    edgeTest();
+    // edgeTest();
+    ringPixelTest();
 
   }
 

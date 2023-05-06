@@ -19,18 +19,10 @@ namespace Roof {
   typedef uint8_t ring_t;   // Ring number. There are 6 rings, numbered from 0 to 5.
 
   //
-  // Each ring has four edges and you can refer to one edge at a time. They are numbered clockwise 0-3.
+  // Each ring has four edges and you can refer to one edge at a time. They are numbered clockwise 0-3
+  // starting at the "top" (which is the back of the camp)
   // 
   typedef uint8_t edge_t;   // Edge number. There are 4 edges, clockwise, 0 - 3.
-
-  //
-  // Each ring consists of 150 chunks. A chunk is 4 pixels in the physical
-  // hardware, or 1 pixel in the simulator. The chunks are numbered from the
-  // center of the top, clockwise.
-  //
-  //
-  //
-
 
   // These utility functions can be used by animations to set
   // the color of LEDs. Animations should not access the leds[] array
@@ -39,10 +31,8 @@ namespace Roof {
   void SetRingColor(ring_t ring, CRGB color);   // sets an entire ring to the same color.
   void SetEdgeColor(ring_t ring, edge_t edge, CRGB color);   // sets on edge of one ring to a specific color
   void SetGlobalColor(CRGB color);              // set the entire roof to the same color.
-//  void SetRingChunk(ring_t ring, uint32_t chunk, CRGB color);   // sets a chunk (4 pixels) of a ring to a color.
+  void SetRingPixel(ring_t ring, uint32_t pixel, CRGB color);   // sets a pixel of a ring to a color. For this function pixel is 0 - 149, clockwise from top center
   
-
-
   void setup();
   void loop();
 };

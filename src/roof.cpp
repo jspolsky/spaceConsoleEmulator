@@ -25,9 +25,9 @@ namespace Roof
     {299,266,265,225,525,558,559,599},
     {224,191,190,150,450,483,484,524},
     {149,116,115,75,375,408,409,449},
-    {858,825,1125,1165,1165,1199,899,859},
-    {783,750,1050,1090,1090,1124,824,784},
-    {708,675,975,1015,1015,1049,749,709}
+    {858,825,1125,1165,1166,1199,899,859},
+    {783,750,1050,1090,1091,1124,824,784},
+    {708,675,975,1015,1016,1049,749,709},
   };
 
   void SetLed(uint32_t i, CRGB color) {
@@ -51,6 +51,42 @@ namespace Roof
 
     for (uint32_t i = endpoint[0]; i <= endpoint[1]; i++)
       SetLed(i, color);
+
+  }
+
+  void SetRingPixel(ring_t ring, uint32_t pixel, CRGB color) {
+
+    // for the purpose of this function each ring is deemed to have 150 pixels
+    // numbered 0..149, starting at the *center* of the *back* of the ring and
+    // running clockwise when looking down on the camp.
+
+    uint32_t physical = 0;
+
+    // Where does this pixel land?
+    if (pixel < 17) {
+      // top right
+      physical = map(pixel, 0, 16, edge_endpoints[ring][0] - 17, edge_endpoints[ring][1]);
+    }
+    else if (pixel < 58) {
+      // right
+      physical = map(pixel, 17, 57, edge_endpoints[ring][2], edge_endpoints[ring][3]);
+    }
+    else if (pixel < 92) {
+      // bottom
+      physical = map(pixel, 58, 91, edge_endpoints[ring][4], edge_endpoints[ring][5]);
+    }
+    else if (pixel < 133) {
+      // left
+      physical = map(pixel, 92, 132, edge_endpoints[ring][6], edge_endpoints[ring][7]);
+    }
+    else if (pixel < 150) {
+      physical = map(pixel, 133, 150, edge_endpoints[ring][0], edge_endpoints[ring][1] + 16);
+    }
+    else {
+      // error
+    }
+
+    SetLed(physical, color);
 
   }
 
