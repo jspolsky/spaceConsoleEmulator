@@ -80,7 +80,7 @@ namespace Jetpack {
 
   void edgeTest() {
 
-    static Roof::edge_t edgeNumber = 0;
+    static int edgeNumber = 0;
     
     EVERY_N_MILLIS(100) {
 
@@ -89,7 +89,8 @@ namespace Jetpack {
         Roof::SetGlobalColor(CRGB::Black);
       }
 
-      Roof::SetEdgeColor(edgeNumber, CRGB::Red);
+      Roof::SetEdgeColor(edgeNumber / 4, edgeNumber % 4, CRGB::Red);
+            
       edgeNumber = (edgeNumber + 1) % 24;
 
     }
@@ -97,7 +98,6 @@ namespace Jetpack {
   }
 
   void loop() {
-
 
     // slowRainbow();
     // palmSpringsModern();

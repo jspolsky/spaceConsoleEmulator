@@ -20,34 +20,14 @@ namespace Roof
     { 675, 749, 975, 1049 }
   };
 
-  const uint32_t edge_endpoints[24][2] = 
+  const uint32_t edge_endpoints[6][8] = 
   {
-    {266, 299},
-    {191, 224},
-    {116, 149},
-    {525, 558},
-    {450, 483},
-    {375, 408},
-
-    {825, 858},
-    {750, 783},
-    {675, 708},
-    {1166, 1199},
-    {1091, 1124},
-    {1016, 1049},
-
-    {559, 599},
-    {225, 265},
-    {484, 524},
-    {150, 190},
-    {409, 449},
-    {75, 115},
-    {859, 899},
-    {1125, 1165},
-    {784, 824},
-    {1050, 1090},
-    {709, 749},
-    {975, 1015}
+    {299,266,265,225,525,558,559,599},
+    {224,191,190,150,450,483,484,524},
+    {149,116,115,75,375,408,409,449},
+    {858,825,1125,1165,1165,1199,899,859},
+    {783,750,1050,1090,1090,1124,824,784},
+    {708,675,975,1015,1015,1049,749,709}
   };
 
   void SetLed(uint32_t i, CRGB color) {
@@ -63,9 +43,13 @@ namespace Roof
 
   }
 
-  void SetEdgeColor(edge_t edge, CRGB color) {
+  void SetEdgeColor(ring_t ring, edge_t edge, CRGB color) {
+  
+    uint32_t endpoint[2];
+    endpoint[0] = min(edge_endpoints[ring][edge * 2], edge_endpoints[ring][edge * 2 + 1]);
+    endpoint[1] = max(edge_endpoints[ring][edge * 2], edge_endpoints[ring][edge * 2 + 1]);
 
-    for (uint32_t i = edge_endpoints[edge][0]; i <= edge_endpoints[edge][1]; i++)
+    for (uint32_t i = endpoint[0]; i <= endpoint[1]; i++)
       SetLed(i, color);
 
   }
