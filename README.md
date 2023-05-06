@@ -42,6 +42,10 @@ This is mainly a restriction in the capability of the online simulator. If you w
 
 To create your own patterns, you will create your own personalized .h/.cpp files. You can use jetpack.h/.cpp as a template which has Jetpack's patterns in it. On playa, we will incorporate those files into the real code running on the controller.
 
+# Speed
+
+The emulator is ridiculously slow, and, sadly, there is no "real time clock" in the emulator. That means any animations you come up with will simply draw very, very slowly on the screen. When you get on the real hardware, you'll see them running in full speed. For example, suppose you have decided to run your animation at 120 bpm so it looks good with house music. So you write EVERY_N_MILLIS(500). On the simulator, depending on the speed of your CPU, this might run at 50 bpm. But when we run it on the real hardware, it will indeed look like 120bpm. Hashtag shrug
+
 # Installation
 
 1. Get VS Code
