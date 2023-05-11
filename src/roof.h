@@ -32,6 +32,8 @@ namespace Roof {
   void SetEdgeColor(ring_t ring, edge_t edge, CRGB color);   // sets on edge of one ring to a specific color
   void SetGlobalColor(CRGB color);              // set the entire roof to the same color.
   void SetRingPixel(ring_t ring, uint32_t pixel, CRGB color);   // sets a pixel of a ring to a color. For this function pixel is 0 - 149, clockwise from top center
+  void SetRingPixelHD(ring_t ring, uint32_t pixel, CRGB color);   // sets a high res pixel of a ring to a color. For this function pixel is 0 - 599, clockwise from top center
+  void SetRingAngle(ring_t ring, uint32_t degrees, CRGB color); // treats the ring as if it were a circle and there were pixels from 0 - 359 degrees, clockwise from top center
   
   void setup();
   void loop();

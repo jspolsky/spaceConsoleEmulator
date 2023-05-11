@@ -32,11 +32,7 @@ pixel layout. For example, there is a simple function called SetRingColor which 
 
 # Scaling
 
-Although the actual lights have 3600 pixels, the software library in roof.h/roof.cpp currently only gives you control over groups of 4 pixels.
-
-The physical hardware has 60 pixels per meter, so each 4 pixel "chunk" is about 6 2/3 centimeters. 
-
-This is mainly a restriction in the capability of the online simulator. If you want finer grained control over individual pixels we can provide some high resolution functions, but be aware that the simulator can't show them.
+Although the actual lights have 3600 pixels, the emulator only has 900, for performance reasons. The function SetRingPixel will set a single pixel in the emulator to a specific color; when run on the actual hardware, it will set four neighboring pixels to that color. You can also use the function SetRingPixelHD. This sets a single pixel in the actual hardware to a color (so it's higher resolution), but in the emulator, only every fourth pixel is actually displayed.
 
 # How can I write my own patterns?
 
@@ -44,7 +40,7 @@ To create your own patterns, you will create your own personalized .h/.cpp files
 
 # Speed
 
-The emulator is ridiculously slow, and, sadly, there is no "real time clock" in the emulator. That means any animations you come up with will simply draw very, very slowly on the screen. When you get on the real hardware, you'll see them running in full speed. For example, suppose you have decided to run your animation at 120 bpm so it looks good with house music. So you write EVERY_N_MILLIS(500). On the simulator, depending on the speed of your CPU, this might run at 50 bpm. But when we run it on the real hardware, it will indeed look like 120bpm. Hashtag shrug
+The emulator is ridiculously slow, and, sadly, there is no "real time clock" in the emulator. That means any animations you come up with will simply draw very, very slowly on the screen. When you get on the real hardware, you'll see them running in full speed. For example, suppose you have decided to run your animation at 120 bpm so it looks good with house music. So you write EVERY_N_MILLIS(500). On the simulator, depending on the speed of your CPU, this might run at 50 bpm. But when we run it on the real hardware, it will indeed look like 120bpm. (I've heard from the developer of Wokwi who is working on a fix!)
 
 # Installation
 
